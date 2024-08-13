@@ -120,10 +120,10 @@ for(ct in 1:nCT){
 
    ###--- change added by BMR ---###
   if (max(markspecMCT.lv[[ct]]) < markspecTH.v[ct]) {
-      print(paste('markspecTH.v value of',markspecTH.v[ct], 'is too stringent for cell type',
+      warning(paste('markspecTH.v value of',markspecTH.v[ct], 'is too stringent for cell type',
                   namesCellT.v[ct],'and will return no marker genes. markspecTH.v will be reset to',
                   max(markspecMCT.lv[[ct]]),'for this cell type. If this is not suitable, please
-                  re-run ConstExpRef, excluding this cell type.'))
+                  re-run ConstExpRef excluding this cell type.'))
       markspecTH.v[ct] <- max(markspecMCT.lv[[ct]])
     }
     ###--- end ---###
